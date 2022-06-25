@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.content.Intent
+
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locationmaker2.adapter.LocationAdapter
 import com.example.locationmaker2.databinding.ActivityMainBinding
-import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
     private fun initRecyclerView(){
         binding.rvPrincipal.layoutManager = LinearLayoutManager(this)
         binding.rvPrincipal.adapter = LocationAdapter(dataProviderLocation.dataLocationList) { info ->
@@ -39,13 +40,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onClick(locationData: LocationData){
+    private fun onClick(locationData: LocationData){
         val cardV1 = findViewById<CardView>(R.id.CardView) as CardView
         cardV1.setOnClickListener {
             val intent = Intent(this@MainActivity, NavegationMap::class.java)
             startActivity(intent)
         }
     }
-
-
 }

@@ -14,4 +14,6 @@
     <color name="BackgroundTintButton">#3ac2c2</color>
     <color name="BackgroundBorderButton">#2db0b0</color>
     <color name="BackgroundColorTexBTN2">#29b9b9</color>
+
+    <color name="Transparent">@android:color/transparent</color>
 </resources>

@@ -5,13 +5,14 @@
       <map>
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/circlependiente.xml" value="0.2405" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/circlevisited.xml" value="0.2415" />
+        <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/fondo_degradado.xml" value="0.2405" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/ic_arrow.xml" value="0.2415" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2415" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/ic_nav_back.xml" value="0.2405" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/searchview_backgorund.xml" value="0.2415" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/drawable/shapeas.xml" value="0.2415" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
-        <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/layout/activity_navegation_map.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/layout/activity_navegation_map.xml" value="0.264" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/layout/item_popup_info.xml" value="0.4" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/layout/items_cards_views.xml" value="0.6" />
         <entry key="..\:/Users/crist/Documents/CURSO KOTLIN/LocationMaker2/app/src/main/res/menu/menu.xml" value="0.23541666666666666" />
