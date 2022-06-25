@@ -1,16 +1,14 @@
 package com.example.locationmaker2.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.locationmaker2.LocationData
-import com.example.locationmaker2.NavegationMap
 import com.example.locationmaker2.R
 
 
-class LocationAdapter(private val dataLocationList:List<LocationData>, private val onClickListener:(LocationData) -> Unit) : RecyclerView.Adapter<LocationViewHolder>(){
+
+class LocationAdapter(private val dataLocationList:List<LocationData>, private val onClickListener:(LocationData) -> Unit) : RecyclerView.Adapter<LocationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -23,6 +21,5 @@ class LocationAdapter(private val dataLocationList:List<LocationData>, private v
     }
 
     override fun getItemCount(): Int = dataLocationList.size
-
 
 }
