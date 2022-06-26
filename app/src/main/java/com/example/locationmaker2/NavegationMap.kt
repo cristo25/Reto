@@ -14,7 +14,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 class NavegationMap : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
-    var initActivityVar = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
