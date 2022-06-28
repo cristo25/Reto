@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.content.Intent
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locationmaker2.adapter.LocationAdapter
 import com.example.locationmaker2.databinding.ActivityMainBinding
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onLocationPressed(locationData: LocationData){
-        val intent = Intent(this, NavegationMap::class.java)
+        val intent = Intent(this, NavegationMapActivity::class.java)
         intent.putExtra("location", locationData)
         startActivity(intent)
     }

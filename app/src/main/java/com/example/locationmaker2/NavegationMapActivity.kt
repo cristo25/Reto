@@ -11,7 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-class NavegationMap : AppCompatActivity(), OnMapReadyCallback {
+class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     override fun onCreate(savedInstanceState: Bundle?) {

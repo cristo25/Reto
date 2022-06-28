@@ -14,4 +14,5 @@ class LocationViewHolder(view: View):RecyclerView.ViewHolder(view) {
         binding.tvStreetName.text = LocationDataModel.streetDirection
         binding.tvSuburb.text = LocationDataModel.suburbName
     }
+
 }

@@ -21,8 +21,8 @@ class LocationAdapter(
 
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
         val item = dataLocationList[position]
-        holder.render(item)
         holder.itemView.setOnClickListener { onClickListener }
+        holder.render(item)
     }
 
     override fun getItemCount(): Int = dataLocationList.size
