@@ -8,7 +8,11 @@ import com.example.locationmaker2.R
 
 
 
-class LocationAdapter(private val dataLocationList:List<LocationData>, private val onClickListener:(LocationData) -> Unit) : RecyclerView.Adapter<LocationViewHolder>() {
+class LocationAdapter(
+    private val dataLocationList:List<LocationData>,
+    private val onClickListener:(LocationData) -> Unit
+) : RecyclerView.Adapter<LocationViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return LocationViewHolder(layoutInflater.inflate(R.layout.items_cards_views, parent, false))
@@ -17,7 +21,8 @@ class LocationAdapter(private val dataLocationList:List<LocationData>, private v
 
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
         val item = dataLocationList[position]
-        holder.render(item, onClickListener)
+        holder.render(item)
+        holder.itemView.setOnClickListener { onClickListener }
     }
 
     override fun getItemCount(): Int = dataLocationList.size

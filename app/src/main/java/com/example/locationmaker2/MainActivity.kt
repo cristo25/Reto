@@ -12,7 +12,9 @@ import com.example.locationmaker2.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
@@ -26,25 +28,21 @@ class MainActivity : AppCompatActivity() {
         val menuItem =  menu!!.findItem(binding.svBusquedaPrincipalWidget.id)
         return super.onCreateOptionsMenu(menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
     }
 
-
-    private fun initRecyclerView(){
+    private fun initRecyclerView() {
         binding.rvPrincipal.layoutManager = LinearLayoutManager(this)
         binding.rvPrincipal.adapter = LocationAdapter(dataProviderLocation.dataLocationList) { info ->
-            onClick(
-                info
-            )
+            onLocationPressed(info)
         }
     }
 
-    private fun onClick(locationData: LocationData){
-        val cardV1 = findViewById<CardView>(R.id.CardView) as CardView
-        cardV1.setOnClickListener {
-            val intent = Intent(this@MainActivity, NavegationMap::class.java)
-            startActivity(intent)
-        }
+    private fun onLocationPressed(locationData: LocationData){
+        val intent = Intent(this, NavegationMap::class.java)
+        intent.putExtra("location", locationData)
+        startActivity(intent)
     }
 }
