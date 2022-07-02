@@ -9,10 +9,11 @@ class LocationViewHolder(view: View):RecyclerView.ViewHolder(view) {
 
     val binding = ItemsCardsViewsBinding.bind(view)
 
-    fun render(LocationDataModel:LocationData){
+    fun render(LocationDataModel:LocationData, onClickListener:(LocationData) -> Unit){
         binding.tvVisited.text = LocationDataModel.statusLocation
         binding.tvStreetName.text = LocationDataModel.streetDirection
         binding.tvSuburb.text = LocationDataModel.suburbName
+        this.itemView.setOnClickListener{onClickListener(LocationDataModel)}
     }
 
 }
