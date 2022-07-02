@@ -1,11 +1,18 @@
 package com.example.locationmaker2
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.loader.ResourcesProvider
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.locationmaker2.databinding.ActivityNavegationMapBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -19,6 +26,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
+    companion object{
+        const val REQUEST_CODE_LOCATION = 0
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
@@ -39,6 +49,7 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
         createMarker()
+        enableLocation()
     }
     private fun createMarker(){
         val coordinates = LatLng(20.6721825,-103.3844292)
@@ -56,6 +67,43 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         )
     }
 
+    private fun isLocationPermissionIsGranted() = ContextCompat.checkSelfPermission(
+        this, Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
 
+    @SuppressLint("MissingPermission")
+    private fun enableLocation(){
+        if (!::map.isInitialized) return
+        if (isLocationPermissionIsGranted()){
+            map.isMyLocationEnabled = true
+        } else {
+            requestLocationPermission()
+        }
+    }
 
+    private fun requestLocationPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(
+                this, Manifest.permission.ACCESS_FINE_LOCATION)){
+            Toast.makeText(this, "Acepta permisos de localización", Toast.LENGTH_SHORT).show()
+        } else {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                REQUEST_CODE_LOCATION)
+        }
+    }
+
+    @SuppressLint("MissingSuperCall", "MissingPermission")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when (requestCode){
+            REQUEST_CODE_LOCATION -> if(grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                map.isMyLocationEnabled = true
+            } else {
+                Toast.makeText(this, "Acepta permisos de localización", Toast.LENGTH_SHORT).show()
+            } else -> {}
+        }
+    }
 }

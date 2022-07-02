@@ -1,50 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/principalParent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/BackgroundPrincipal"
     app:layoutDescription="@xml/activity_navegation_map_scene">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/BackgroundPrincipal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/principalParent">
+
+        <ImageButton
+            android:id="@+id/btnBackActivity"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/Transparent"
+            android:src="@drawable/ic_nav_back" />
+    </androidx.cardview.widget.CardView>
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="850dp">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewMenu"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:backgroundTintMode="screen"
-            android:backgroundTint="@color/BackgroundPrincipal"
-            app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewBack">
 
-            <ImageButton
-                android:id="@+id/btnBackActivity"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_nav_back"
-                android:backgroundTint="@color/Transparent">
-            </ImageButton>
-        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/CardViewMap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="620dp"
+            android:layout_marginTop="580dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginEnd="20dp"
             android:contextClickable="true"
-            android:padding="15dp"
             card_view:cardBackgroundColor="#FFFFFFFF"
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="5dp"
-            card_view:contentPadding="8dp"
-            card_view:layout_constraintBottom_toBottomOf="parent">
+            card_view:contentPadding="8dp">
 
             <RelativeLayout
                 android:id="@+id/rlViewMap"
@@ -73,7 +79,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_toEndOf="@+id/itemimagePendingMap"
                     android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:text="Pendiente"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Visiting status"
                     android:textColor="@color/SuburbColor"
                     android:textSize="11sp"
                     tools:text="Visited" />
@@ -85,7 +92,8 @@
                     android:layout_below="@+id/tvVisitedMap"
                     android:layout_toEndOf="@+id/itemimagePendingMap"
                     android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:text="Av. de la Paz 2599"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="StreetName"
                     android:textColor="@color/StreedNameColor"
                     android:textSize="13sp"
                     tools:text="Streed Name" />
@@ -97,7 +105,8 @@
                     android:layout_below="@+id/tvStreetNameMap"
                     android:layout_toEndOf="@+id/itemimagePendingMap"
                     android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:text="Arcos Vallarta"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Suburb"
                     android:textColor="@color/SuburbColor"
                     android:textSize="13sp"
                     tools:text="Suburb" />
@@ -139,7 +148,9 @@
                     app:strokeColor="@color/BackgroundBorderButton" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
     </fragment>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
