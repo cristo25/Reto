@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onLocationPressed(locationData: LocationData){
-        var cardV = findViewById<CardView>(R.id.CardView) as CardView
         var intent = Intent(this, NavegationMapActivity::class.java)
         intent.putExtra("location", locationData)
         startActivity(intent)
