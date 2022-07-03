@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//@Entity(tableName = "Direcciones")
+@Entity(tableName = "Direcciones")
 data class DataEntities (@PrimaryKey(autoGenerate = true)
                         @ColumnInfo(name = "id" ) var id : Int = 0,
                         @ColumnInfo(name = "visited" ) var visited : Boolean,

@@ -13,5 +13,7 @@
         <item name="android:statusBarColor">@color/BackgroundPrincipal</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:editTextColor">#3C3C3C</item>
+        <item name="android:textColorHint">#AAA</item>
     </style>
 </resources>

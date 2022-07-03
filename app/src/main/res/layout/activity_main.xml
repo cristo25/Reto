@@ -63,19 +63,16 @@
         card_view:cardBackgroundColor="#FFFFFFFF"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="5dp"
-        card_view:contentPadding="8dp">
+        card_view:contentPadding="2dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/svBusquedaPrincipalWidget"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotoregular"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"
                 app:iconifiedByDefault="false"
                 app:layout_constraintCircleRadius="10dp"
                 app:queryBackground="@android:color/transparent"

@@ -19,8 +19,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.graphics.Typeface
+import android.location.Location
 
-class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
+class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationClickListener {
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     companion object{
@@ -58,6 +59,7 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         map = googleMap
         createMarker()
         enableLocation()
+        map.setOnMyLocationClickListener(this)
     }
 
     private fun createMarker(){
@@ -117,5 +119,21 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
                     Toast.LENGTH_SHORT).show()
             } else -> {}
         }
+    }
+
+    @SuppressLint("MissingPermission")
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+        if (!::map.isInitialized) return
+        if (!isLocationPermissionIsGranted()){
+            map.isMyLocationEnabled = false
+            Toast.makeText(this, "Acepta permisos de localización",
+                Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onMyLocationClick(p0: Location) {
+        Toast.makeText(this, "Estan en ${p0.latitude}, ${p0.longitude}",
+            Toast.LENGTH_SHORT).show()
     }
 }

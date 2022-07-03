@@ -5,16 +5,20 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.content.Intent
-import androidx.cardview.widget.CardView
+import android.graphics.Typeface
+import android.view.View
+import android.widget.TextView
+import android.widget.SearchView
+import android.widget.SearchView.*
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locationmaker2.adapter.LocationAdapter
 import com.example.locationmaker2.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
@@ -45,4 +49,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("location", locationData)
         startActivity(intent)
     }
+
 }
