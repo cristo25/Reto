@@ -2,14 +2,11 @@ package com.example.locationmaker2
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.loader.ResourcesProvider
-import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
-import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -18,10 +15,10 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import android.graphics.Typeface
 
 class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map:GoogleMap
@@ -29,6 +26,10 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object{
         const val REQUEST_CODE_LOCATION = 0
     }
+    //VARIABLES PARA CAMBIAR FUENTE DE BOTONES
+    lateinit var btnChangeFont: Button
+    lateinit var btnChangeFont2: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
@@ -39,7 +40,14 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
+
+        //CAMBIAR FUENTE DE BOTONES
+        btnChangeFont = findViewById(R.id.btnNavegar)
+        btnChangeFont.typeface = Typeface.createFromAsset(assets,"fonts/robotoregular.ttf")
+        btnChangeFont2 = findViewById(R.id.btnRealizarVisita)
+        btnChangeFont2.typeface  = Typeface.createFromAsset(assets,"fonts/robotomedium.ttf")
     }
+
     private fun createFragment(){
         val mapFragment: SupportMapFragment = supportFragmentManager.findFragmentById(R.id.map)
                 as SupportMapFragment
@@ -51,6 +59,7 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         createMarker()
         enableLocation()
     }
+
     private fun createMarker(){
         val coordinates = LatLng(20.6721825,-103.3844292)
         val marker = MarkerOptions().position(coordinates).title("Primera Ubicacion")
@@ -84,7 +93,8 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun requestLocationPermission(){
         if(ActivityCompat.shouldShowRequestPermissionRationale(
                 this, Manifest.permission.ACCESS_FINE_LOCATION)){
-            Toast.makeText(this, "Acepta permisos de localización", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Acepta permisos de localización",
+                Toast.LENGTH_SHORT).show()
         } else {
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
@@ -99,10 +109,12 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         grantResults: IntArray
     ) {
         when (requestCode){
-            REQUEST_CODE_LOCATION -> if(grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+            REQUEST_CODE_LOCATION -> if(grantResults.isNotEmpty() && grantResults[0]==
+                PackageManager.PERMISSION_GRANTED){
                 map.isMyLocationEnabled = true
             } else {
-                Toast.makeText(this, "Acepta permisos de localización", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Acepta permisos de localización",
+                    Toast.LENGTH_SHORT).show()
             } else -> {}
         }
     }
