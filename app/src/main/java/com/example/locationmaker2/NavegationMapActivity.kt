@@ -21,7 +21,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 import android.graphics.Typeface
 import android.location.Location
 
-class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMyLocationClickListener {
+class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
+    GoogleMap.OnMyLocationClickListener {
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     companion object{
@@ -41,7 +42,6 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
-
         //CAMBIAR FUENTE DE BOTONES
         btnChangeFont = findViewById(R.id.btnNavegar)
         btnChangeFont.typeface = Typeface.createFromAsset(assets,"fonts/robotoregular.ttf")
@@ -63,8 +63,8 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
     }
 
     private fun createMarker(){
-        val coordinates = LatLng(20.6721825,-103.3844292)
-        val marker = MarkerOptions().position(coordinates).title("Primera Ubicacion")
+        val coordinates = LatLng(20.6721825, -103.3844292)
+        val marker = MarkerOptions().position(coordinates).title("Ubicacion")
             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
             /*
             marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_visited_marker))
@@ -136,4 +136,5 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap
         Toast.makeText(this, "Estan en ${p0.latitude}, ${p0.longitude}",
             Toast.LENGTH_SHORT).show()
     }
+
 }
