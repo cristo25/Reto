@@ -15,15 +15,15 @@ import com.example.locationmaker2.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var viewModel:MainViewModel
+    lateinit var  viewModel : MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //ENLACE MODELO CON LIVEDATA
-       //viewModel = ViewModelProvider(this).get()
-        //viewModel.Iniciar()
+        viewModel = ViewModelProvider(this).get()
+        viewModel.Iniciar()
         initRecyclerView()
     }
 

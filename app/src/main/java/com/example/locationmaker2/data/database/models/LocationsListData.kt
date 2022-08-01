@@ -1,4 +1,4 @@
-package com.example.locationmaker2.data.database.entities
+package com.example.locationmaker2.data.database.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

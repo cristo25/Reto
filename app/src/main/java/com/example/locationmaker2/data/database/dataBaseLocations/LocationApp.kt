@@ -2,10 +2,9 @@ package com.example.locationmaker2.data.database.dataBaseLocations
 
 import android.app.Application
 import androidx.room.Room
-import com.example.locationmaker2.data.database.entities.LocationsListData
 
 class LocationApp: Application() {
-   /* companion object{
+   companion object{
         lateinit var db: locationsInfoDB
     }
 
@@ -16,5 +15,5 @@ class LocationApp: Application() {
             locationsInfoDB::class.java,
             "LocationsDB"
         ).build()
-    }*/
+    }
 }
