@@ -10,11 +10,13 @@ import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.locationmaker2.adapter.LocationAdapter
 import com.example.locationmaker2.databinding.ActivityMainBinding
+import com.example.locationmaker2.databinding.ItemsCardsViewsBinding
 import com.example.locationmaker2.viewModel.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var bindingCardView: ItemsCardsViewsBinding
     lateinit var  viewModel : MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

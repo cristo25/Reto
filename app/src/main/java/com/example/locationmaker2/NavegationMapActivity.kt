@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -20,14 +21,18 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.graphics.Typeface
 import android.location.Location
+import com.example.locationmaker2.LocationData
+import com.example.locationmaker2.databinding.ActivityMainBinding
 
 class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnMyLocationClickListener {
+    private lateinit var bindingA1: ActivityMainBinding
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     companion object{
         const val REQUEST_CODE_LOCATION = 0
     }
+
     //VARIABLES PARA CAMBIAR FUENTE DE BOTONES
     lateinit var btnChangeFont: Button
     lateinit var btnChangeFont2: Button
@@ -42,12 +47,20 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
+
         //CAMBIAR FUENTE DE BOTONES
         btnChangeFont = findViewById(R.id.btnNavegar)
         btnChangeFont.typeface = Typeface.createFromAsset(assets,"fonts/robotoregular.ttf")
         btnChangeFont2 = findViewById(R.id.btnRealizarVisita)
         btnChangeFont2.typeface  = Typeface.createFromAsset(assets,"fonts/robotomedium.ttf")
+
+        binding.btnRealizarVisita.setOnClickListener{
+            binding.tvVisitedMap.setTextColor(Color.parseColor("#3ac2c2"))
+            binding.tvVisitedMap.text = "Visitado"
+        }
     }
+
+
 
     private fun createFragment(){
         val mapFragment: SupportMapFragment = supportFragmentManager.findFragmentById(R.id.map)
