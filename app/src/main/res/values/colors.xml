@@ -15,5 +15,8 @@
     <color name="BackgroundBorderButton">#2db0b0</color>
     <color name="BackgroundColorTexBTN2">#29b9b9</color>
 
+    <color name="BackgroundPrincipalB">#111111</color>
+    <color name="cardview_dark_background">#2C2C2C</color>
+
     <color name="Transparent">@android:color/transparent</color>
 </resources>
