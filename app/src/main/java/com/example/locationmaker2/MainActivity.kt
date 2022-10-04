@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        /*//ENLACE MODELO CON LIVEDATA
-        viewModel = ViewModelProvider(this).get()
+        //ENLACE MODELO CON LIVEDATA
+        /*viewModel = ViewModelProvider(this).get()
         viewModel.Iniciar()*/
         initRecyclerView()
     }

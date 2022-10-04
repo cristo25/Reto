@@ -6,14 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BackgroundPrincipal"
     app:layoutDescription="@xml/activity_navegation_map_scene">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/BackgroundPrincipal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/principalParent">
@@ -31,7 +29,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +78,7 @@
                     android:layout_toEndOf="@+id/itemimagePendingMap"
                     android:layout_toRightOf="@+id/itemimagePendingMap"
                     android:fontFamily="@font/robotomedium"
-                    android:text="Visiting status"
+                    android:text="Estado de visita"
                     android:textColor="@color/SuburbColor"
                     android:textSize="11sp"
                     tools:text="Visited" />

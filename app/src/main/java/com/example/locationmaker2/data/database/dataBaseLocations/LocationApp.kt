@@ -5,7 +5,7 @@ import androidx.room.Room
 
 class LocationApp: Application() {
    companion object{
-        lateinit var db: locationsInfoDB
+        lateinit var db: locationsInfoDB //VARIABLE QUE NO PROVOCA EL PROBLEMA
     }
 
     override fun onCreate() {

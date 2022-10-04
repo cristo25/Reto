@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.locationmaker2.LocationData
 import com.example.locationmaker2.R
-
+import com.example.locationmaker2.data.database.models.LocationsListData
 
 
 class LocationAdapter(
