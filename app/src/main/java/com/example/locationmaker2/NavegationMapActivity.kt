@@ -26,7 +26,7 @@ import com.example.locationmaker2.databinding.ActivityMainBinding
 
 class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnMyLocationClickListener {
-    private lateinit var bindingA1: ActivityMainBinding
+    private lateinit var bindingA1: ActivityMainBinding//Remove if not needed
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     companion object{
@@ -81,7 +81,7 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
             /*
             marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_visited_marker))
-                .anchor(0.0f,1.0f)
+                .anchor(0.0f,1.0f)//Remove if not needed
             */
         map.addMarker(marker)
         map.animateCamera(

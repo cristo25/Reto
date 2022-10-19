@@ -12,11 +12,15 @@ interface Dao {
     fun getAll():LiveData<List<LocationsListData>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertarDatos(locaciones:List<LocationsListData>):List<Long>
+    suspend fun insert(location: LocationsListData): Long // use this to insert one by one
+
+    @Deprecated("Not insert in list. Instead insert one by one")
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertarDatos(locaciones:List<LocationsListData>):List<Long> //use english in code
 
     @Update
-    suspend fun updater(locaciones:LocationsListData):Int
+    suspend fun updater(locaciones:LocationsListData):Int//use english in code
 
     @Delete
-    suspend fun deleter(locaciones: LocationsListData):Int
+    suspend fun deleter(locaciones: LocationsListData):Int//use english in code
 }

@@ -9,6 +9,6 @@ import com.example.locationmaker2.data.database.models.LocationsListData
     entities = [LocationsListData::class],
     version = 1
 )
-abstract class locationsInfoDB:RoomDatabase() {
-    abstract fun getLocationData():Dao
+abstract class locationsInfoDB: RoomDatabase() { //care the spaces
+    abstract fun getLocationDataDao(): Dao //care the spaces
 }

@@ -1,19 +1,7 @@
 package com.example.locationmaker2.data.database.dataBaseLocations
 
 import android.app.Application
-import androidx.room.Room
+import dagger.hilt.android.HiltAndroidApp
 
-class LocationApp: Application() {
-   companion object{
-        lateinit var db: locationsInfoDB //VARIABLE QUE PROVOCA EL PROBLEMA
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        db = Room.databaseBuilder(
-            this,
-            locationsInfoDB::class.java,
-            "LocationsDB"
-        ).build()
-    }
-}
+@HiltAndroidApp
+class LocationApp: Application()
