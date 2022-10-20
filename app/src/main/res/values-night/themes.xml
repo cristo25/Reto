@@ -18,4 +18,7 @@
         <item name="android:backgroundTint">#000000</item>
 
     </style>
+    <style name="cardviewColorDark" parent="CardView">
+        <item name="backgroundTint">#575757</item>
+    </style>
 </resources>

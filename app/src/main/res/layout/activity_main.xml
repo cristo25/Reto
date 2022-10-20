@@ -69,7 +69,7 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/svBusquedaPrincipalWidget"
+                android:id="@+id/svPrincipalWidget"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:iconifiedByDefault="false"
@@ -95,6 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/svBusquedaPrincipal" />
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/items_cards_views"
         android:id="@+id/rvPrincipal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
