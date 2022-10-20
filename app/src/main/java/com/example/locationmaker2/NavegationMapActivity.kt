@@ -21,12 +21,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.graphics.Typeface
 import android.location.Location
-import com.example.locationmaker2.LocationData
-import com.example.locationmaker2.databinding.ActivityMainBinding
+import android.widget.TextView
 
 class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnMyLocationClickListener {
-    private lateinit var bindingA1: ActivityMainBinding//Remove if not needed
     private lateinit var map:GoogleMap
     private lateinit var binding: ActivityNavegationMapBinding
     companion object{
@@ -79,10 +77,6 @@ class NavegationMapActivity : AppCompatActivity(), OnMapReadyCallback,
         val coordinates = LatLng(20.6721825, -103.3844292)
         val marker = MarkerOptions().position(coordinates).title("Ubicacion")
             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
-            /*
-            marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_visited_marker))
-                .anchor(0.0f,1.0f)//Remove if not needed
-            */
         map.addMarker(marker)
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(coordinates, 18f),

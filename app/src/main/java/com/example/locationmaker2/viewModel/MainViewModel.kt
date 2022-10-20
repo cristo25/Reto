@@ -1,40 +1,31 @@
 package com.example.locationmaker2.viewModel
 
-import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.locationmaker2.data.database.dao.Dao
 import com.example.locationmaker2.data.database.models.LocationsListData
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import dagger.hilt.android.lifecycle.HiltViewModel
+import com.example.locationmaker2.data.database.dao.Dao
 import javax.inject.Inject
+
 
 @HiltViewModel //Check what is Hilt
 class MainViewModel @Inject constructor(
     private val dao: Dao
 ) : ViewModel() {
     val LocationsList = MutableLiveData<List<LocationsListData>>()//check Live Data in Android documentation
-    val ParamaterSearch = MutableLiveData<String>()//Remove if not needed
 
-   fun Iniciar() { //use full english in code
+   fun start(){
         viewModelScope.launch {
-             var result = withContext(Dispatchers.IO) {
+
                 insertData()
-            }
-           for (location in LocationsList.value!!) { //not force values. this could CRASH!!
-                Log.d("mensaje", "id ${location.id}, visited ${location.visited}, " +
-                        "streetName ${location.streetName}, suburb ${location.suburb}, " +
-                        "latitude ${location.latitude}, longitude ${location.longitude}")
-            }
+
         }
     }
 
     private suspend fun insertData() {
-        dao.insertarDatos(arrayListOf( //check te deprecated info. Replace this function by insert
+        dao.insert(arrayListOf( //check te deprecated info. Replace this function by insert
             LocationsListData(0,false,"Av. de la Paz 2599",
                 "Arcos Vallarta",20.6721825f,-103.3844292f),
             LocationsListData(0,false,"Calle Duque de Rivas 98",
@@ -65,6 +56,8 @@ class MainViewModel @Inject constructor(
                 "Lomas de Providencia",20.694665f,-103.387882f),
             LocationsListData(0,false,"Calle Ontario 1306",
                 "Providencia 2a Secc.",20.695899f,-103.381214f)
+
+
         ))
         dao.getAll()
     }

@@ -28,127 +28,129 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewBack">
 
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/CardViewMap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="580dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="20dp"
-            android:contextClickable="true"
-            card_view:cardBackgroundColor="#FFFFFFFF"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="5dp"
-            card_view:contentPadding="8dp">
 
-            <RelativeLayout
-                android:id="@+id/rlViewMap"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:padding="0.5dp"
-                android:paddingBottom="0.5dp">
-
-                <ImageView
-                    android:id="@+id/itemimagePendingMap"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    card_view:srcCompat="@drawable/circlependiente" />
-
-                <TextView
-                    android:id="@+id/tvVisitedMap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/itemimagePendingMap"
-                    android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:fontFamily="@font/robotomedium"
-                    android:text="Estado de visita"
-                    android:textColor="@color/SuburbColor"
-                    android:textSize="11sp"
-                    tools:text="Visited" />
-
-                <TextView
-                    android:id="@+id/tvStreetNameMap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvVisitedMap"
-                    android:layout_toEndOf="@+id/itemimagePendingMap"
-                    android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:fontFamily="@font/robotomedium"
-                    android:text="StreetName"
-                    android:textColor="@color/StreedNameColor"
-                    android:textSize="13sp"
-                    tools:text="Streed Name" />
-
-                <TextView
-                    android:id="@+id/tvSuburb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvStreetNameMap"
-                    android:layout_toEndOf="@+id/itemimagePendingMap"
-                    android:layout_toRightOf="@+id/itemimagePendingMap"
-                    android:fontFamily="@font/robotoregular"
-                    android:text="Suburb"
-                    android:textColor="@color/SuburbColor"
-                    android:textSize="13sp"
-                    tools:text="Suburb" />
-
-                <Button
-                    android:id="@+id/btnNavegar"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="0.2dp"
-                    android:layout_marginBottom="0.2dp"
-                    android:width="130dp"
-                    android:text="Navegar"
-                    android:textAllCaps="false"
-                    android:textColor="@color/BackgroundColorTexBTN2"
-                    android:textSize="14sp"
-                    app:cornerRadius="5dp"
-                    app:strokeColor="@color/BackgroundBorderButton" />
-
-                <Button
-                    android:id="@+id/btnRealizarVisita"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="0.2dp"
-                    android:layout_marginBottom="0.2dp"
-                    android:layout_toEndOf="@+id/btnNavegar"
-                    android:backgroundTint="@color/BackgroundTintButton"
-                    android:text="Realizar Visita"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:cornerRadius="5dp"
-                    app:strokeColor="@color/BackgroundBorderButton" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
     </fragment>
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/CardViewMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:contextClickable="true"
+        card_view:cardBackgroundColor="#FFFFFFFF"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="5dp"
+        card_view:contentPadding="8dp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent">
 
+        <RelativeLayout
+            android:id="@+id/rlViewMap"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:padding="0.5dp"
+            android:paddingBottom="0.5dp">
+
+            <ImageView
+                android:id="@+id/itemimagePendingMap"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                card_view:srcCompat="@drawable/circlependiente" />
+
+            <TextView
+                android:id="@+id/tvVisitedMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/itemimagePendingMap"
+                android:layout_toRightOf="@+id/itemimagePendingMap"
+                android:fontFamily="@font/robotomedium"
+                android:text=""
+                android:textColor="@color/SuburbColor"
+                android:textSize="11sp"
+                tools:text="Visited" />
+
+            <TextView
+                android:id="@+id/tvStreetNameMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvVisitedMap"
+                android:layout_toEndOf="@+id/itemimagePendingMap"
+                android:layout_toRightOf="@+id/itemimagePendingMap"
+                android:fontFamily="@font/robotomedium"
+                android:text=""
+                android:textColor="@color/StreedNameColor"
+                android:textSize="13sp"
+                tools:text="Streed Name" />
+
+            <TextView
+                android:id="@+id/tvSuburb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvStreetNameMap"
+                android:layout_toEndOf="@+id/itemimagePendingMap"
+                android:layout_toRightOf="@+id/itemimagePendingMap"
+                android:fontFamily="@font/robotoregular"
+                android:text=""
+                android:textColor="@color/SuburbColor"
+                android:textSize="13sp"
+                tools:text="Suburb" />
+
+            <Button
+                android:id="@+id/btnNavegar"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0.2dp"
+                android:layout_marginBottom="0.2dp"
+                android:width="130dp"
+                android:text="Navegar"
+                android:textAllCaps="false"
+                android:textColor="@color/BackgroundColorTexBTN2"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeColor="@color/BackgroundBorderButton" />
+
+            <Button
+                android:id="@+id/btnRealizarVisita"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="0.2dp"
+                android:layout_marginBottom="0.2dp"
+                android:layout_toEndOf="@+id/btnNavegar"
+                android:backgroundTint="@color/BackgroundTintButton"
+                android:text="Realizar Visita"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeColor="@color/BackgroundBorderButton" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
